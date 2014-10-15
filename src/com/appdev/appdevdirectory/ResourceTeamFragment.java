@@ -38,7 +38,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.variablevision.appdevdirectory.R;
 
-public class IOSFragment extends ListFragment {
+public class ResourceTeamFragment extends ListFragment {
 	
 	public static final int NUMBER_OF_POSTS = 20;
 	public static final String TAG = MembersList.class.getSimpleName();
@@ -53,13 +53,13 @@ public class IOSFragment extends ListFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View rootView = inflater.inflate(R.layout.fragment_ios, container, false);
+		View rootView = inflater.inflate(R.layout.fragment_resource_team, container, false);
 		
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getActivity().getApplicationContext())
         .build();
     ImageLoader.getInstance().init(config);
 
-		mProgressBar = (ProgressBar) rootView.findViewById(R.id.iOSProgressBar);
+		mProgressBar = (ProgressBar) rootView.findViewById(R.id.teamProgressBar);
 
 		if (isNetworkAvailable()) {
 			mProgressBar.setVisibility(View.VISIBLE);
@@ -193,7 +193,7 @@ public class IOSFragment extends ListFragment {
 
 			try {
 				URL directoryUrl = new URL(
-						"http://www.cs.grinnell.edu/~owusumic17/ios.json");
+						"http://www.cs.grinnell.edu/~owusumic17/resourceteam.json");
 				HttpURLConnection connection = (HttpURLConnection) directoryUrl
 						.openConnection();
 				connection.connect();
@@ -235,5 +235,4 @@ public class IOSFragment extends ListFragment {
 		}
 
 	}
-
 }

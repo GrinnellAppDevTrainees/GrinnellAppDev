@@ -18,14 +18,14 @@ import com.variablevision.appdevdirectory.R;
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
 	// Tab titles
-	private String[] tabs = { "Android", "iOS", "Trainees", "Alumni" };
+	private String[] tabs = { "Android", "iOS", "Trainees", "Alumni", "Resource Team" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.directory);
 
-		// Initilization
+		// Initialization
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		actionBar = getActionBar();
 		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());

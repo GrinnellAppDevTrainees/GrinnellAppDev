@@ -3,6 +3,7 @@ package info.androidhive.tabsswipe.adapter;
 import com.appdev.appdevdirectory.AlumniFragment;
 import com.appdev.appdevdirectory.AndroidFragment;
 import com.appdev.appdevdirectory.IOSFragment;
+import com.appdev.appdevdirectory.ResourceTeamFragment;
 import com.appdev.appdevdirectory.TraineeFragment;
 
 import android.support.v4.app.FragmentManager;
@@ -31,6 +32,9 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 		case 3:
 			// Trainee AlumniFragment activity
 			return new AlumniFragment();
+		case 4:
+			// ResourceTeamFragment activity
+			return new ResourceTeamFragment();
 		}
 
 		return null;
@@ -39,7 +43,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 	@Override
 	public int getCount() {
 		// get item count - equal to number of tabs
-		return 4;
+		return 5;
 	}
 
 }

@@ -47,7 +47,6 @@ public class AndroidFragment extends ListFragment {
 
 	private final String KEY_NAME = "name";
 	private final String KEY_ROLE = "role";
-	private final String KEY_CATEGORY = "category";
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -84,15 +83,16 @@ public class AndroidFragment extends ListFragment {
 			JSONObject jsonMember = jsonMembers.getJSONObject(position);
 
 			
-			String year, name, email, cellphone, picurl, category;
+			String year, name, email, cellphone, picurl, giturl,linkedurl;
 			
-			category = jsonMember.getString("category");
 			year = jsonMember.getString("year");
 			name = jsonMember.getString("name");
 			email = jsonMember.getString("email");
 			cellphone = jsonMember.getString("cellphone");
 			picurl = jsonMember.getString("image");
-			
+			giturl = jsonMember.getString("giturl");
+			linkedurl = jsonMember.getString("linkedurl");
+
 			
 			
 			Intent intent = new Intent(getActivity().getApplicationContext(), IndividualMemberActivity.class);
@@ -101,10 +101,10 @@ public class AndroidFragment extends ListFragment {
 			intent.putExtra("email", email);
 			intent.putExtra("cellphone", cellphone);
 			intent.putExtra("image", picurl);
-			
+			intent.putExtra("giturl", giturl);
+			intent.putExtra("linkedurl", linkedurl);
 			
 			startActivity(intent);
-			//getActivity().finish();
 
 		} catch (JSONException e) {
 			Log.e(TAG, "Exception caught: ", e);
@@ -135,11 +135,6 @@ public class AndroidFragment extends ListFragment {
 				ArrayList<HashMap<String, String>> members = new ArrayList<HashMap<String, String>>();
 				for (int i = 0; i < jsonMembers.length(); i++) {
 					JSONObject member = jsonMembers.getJSONObject(i);
-					
-					String category = member.getString(KEY_CATEGORY);
-					category = Html.fromHtml(category).toString();
-
-					
 
 					String name = member.getString(KEY_NAME);
 					name = Html.fromHtml(name).toString();

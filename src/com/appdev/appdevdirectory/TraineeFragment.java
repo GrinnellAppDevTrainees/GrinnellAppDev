@@ -72,43 +72,6 @@ public class TraineeFragment extends ListFragment {
 		}
 		return rootView;
 	}
-	
-	@Override
-	public void onListItemClick(ListView l, View v, int position, long id) {
-		super.onListItemClick(l, v, position, id);
-
-		JSONArray jsonMembers;
-		
-		try {
-			jsonMembers = mMemberData.getJSONArray("members");
-			JSONObject jsonMember = jsonMembers.getJSONObject(position);
-
-			
-			String year, name, email, cellphone, picurl, category;
-			
-			category = jsonMember.getString("category");
-			year = jsonMember.getString("year");
-			name = jsonMember.getString("name");
-			email = jsonMember.getString("email");
-			cellphone = jsonMember.getString("cellphone");
-			picurl = jsonMember.getString("image");
-			
-			
-			
-			Intent intent = new Intent(getActivity().getApplicationContext(), IndividualMemberActivity.class);
-			intent.putExtra("year", year);
-			intent.putExtra("name", name);
-			intent.putExtra("email", email);
-			intent.putExtra("cellphone", cellphone);
-			intent.putExtra("image", picurl);
-			
-			
-			startActivity(intent);
-		} catch (JSONException e) {
-			Log.e(TAG, "Exception caught: ", e);
-		}
-
-	}
 
 	private boolean isNetworkAvailable() {
 		ConnectivityManager manager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);

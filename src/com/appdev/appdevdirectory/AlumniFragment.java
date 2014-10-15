@@ -84,15 +84,16 @@ public class AlumniFragment extends ListFragment {
 			JSONObject jsonMember = jsonMembers.getJSONObject(position);
 
 			
-			String year, name, email, cellphone, picurl, category;
+			String year, name, email, cellphone, picurl, giturl, linkedurl;
 			
-			category = jsonMember.getString("category");
 			year = jsonMember.getString("year");
 			name = jsonMember.getString("name");
 			email = jsonMember.getString("email");
 			cellphone = jsonMember.getString("cellphone");
 			picurl = jsonMember.getString("image");
-			
+			giturl = jsonMember.getString("giturl");
+			linkedurl = jsonMember.getString("linkedurl");
+
 			
 			
 			Intent intent = new Intent(getActivity().getApplicationContext(), IndividualMemberActivity.class);
@@ -101,9 +102,11 @@ public class AlumniFragment extends ListFragment {
 			intent.putExtra("email", email);
 			intent.putExtra("cellphone", cellphone);
 			intent.putExtra("image", picurl);
-			
-			
+			intent.putExtra("giturl", giturl);
+			intent.putExtra("linkedurl", linkedurl);
 			startActivity(intent);
+			
+			
 		} catch (JSONException e) {
 			Log.e(TAG, "Exception caught: ", e);
 		}

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#999999"
+    android:background="#800000"
     android:orientation="vertical" >
 
     <ListView
@@ -21,7 +21,7 @@
         android:layout_alignParentTop="true" />
 
     <ProgressBar
-        android:id="@+id/alumniProgressBar"
+        android:id="@+id/teamProgressBar"
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
